@@ -8,23 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class AppService {
   ApiUrl = 'https://jsonplaceholder.typicode.com';
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getPosts(): Observable<any> {
-    return this.HttpClient.get(this.ApiUrl + '/posts');
+    return this.httpClient.get(this.ApiUrl + '/posts');
   }
 
   postPosts(): Observable<any> {
-    return this.HttpClient.post(this.ApiUrl + '/posts',
+    return this.httpClient.post(this.ApiUrl + '/posts',
       {
-        "userId": 999,
-        "id": 999,
-        "title": "Angular test",
-        "body": "Angular test"
-      })
+        'userId': 999,
+        'id': 999,
+        'title': 'Angular test',
+        'body': 'Angular test'
+      });
   }
 
   deletePosts(): Observable<any> {
-    return this.HttpClient.delete(this.ApiUrl + '/posts/1');
+    return this.httpClient.delete(this.ApiUrl + '/posts/1');
   }
 }
